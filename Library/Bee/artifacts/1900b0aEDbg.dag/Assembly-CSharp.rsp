@@ -347,12 +347,12 @@
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEngine.UI.ref.dll"
-"Assets/DeathArea.cs"
 "Assets/Player.cs"
 "Assets/ScoreSystem/Level.cs"
 "Assets/ScoreSystem/Menu.cs"
 "Assets/ScoreSystem/Score.cs"
 "Assets/Token.cs"
+"Assets/Zone.cs"
 -langversion:9.0
 
 /deterministic

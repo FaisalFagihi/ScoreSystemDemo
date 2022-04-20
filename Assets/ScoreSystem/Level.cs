@@ -16,14 +16,32 @@ public class Level : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField]
     List<Token> tokens;
+    [SerializeField]
+    public AudioClip winClip;
+    [SerializeField]
+    public AudioClip LoseClip;
+    private AudioSource audioSource;
+
     void Start()
     {
-        DeathArea.DeathHandler += OnDie;
+        Zone.ZoneHitHandler += OnZoneHit;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
-    private void OnDie(object sender, object value)
+    private void OnZoneHit(object sender, bool isWinZone)
     {
+        if (isWinZone)
+        {
+            audioSource.clip = winClip;
+        }
+        else
+        {
+            audioSource.clip = LoseClip;
+
+        }
         menu.DisplayScore(Score.CurrentScore, firstHighScoreValue, secondHighScoreValue, thirdHighScoreValue);
+        audioSource.Play();
     }
 
     public void Restart()
